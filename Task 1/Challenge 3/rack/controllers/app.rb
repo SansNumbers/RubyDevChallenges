@@ -8,10 +8,6 @@ require './controllers/pg_connect'
 class App
   include Render
 
-  def parse(path)
-    table = CSV.parse(File.read(path), headers: true)
-  end
-
   def call(env)
     request = Rack::Request.new(env)
     index(request)
@@ -103,11 +99,9 @@ class App
       rescue PG::CardinalityViolation
         next
       end
-      
+
     end
 
     render 'views/ch3.html.erb'
-
   end
-
 end

@@ -2,13 +2,13 @@
 
 source 'https://rubygems.org'
 
+gem 'bootstrap'
+gem 'erb'
+gem 'pg'
+gem 'puma'
 gem 'rack'
 gem 'rack-router'
-gem 'puma'
-gem 'pg'
-gem 'erb'
 gem 'rubocop'
 
-
-#gem 'csv'
-#gem 'hanami-api'
+# gem 'csv'
+# gem 'hanami-api'

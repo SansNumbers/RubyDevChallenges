@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Challenge 4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class='row'>
+      <div class="col-sm-4">
+         <div class='logo'>
+           <div class="title">LOGO</div>
+         </div>
+      </div>
+
+      <div class="col-sm-8">
+          <h1>State Report</h1>
+      </div>
+    </div>
+
+    <%@offices.each_with_index do |office, index| %>
+
+    <div class="row">
+      <div class="col-2 hr-block"><h2><%= office[index]["state"] %></h2></div>
+      <div class="col-10 hr-block"></div>
+
+      <div class="w-100 d-none d-md-block"></div>
+      <%office.each do |data| %>
+
+          <div class="col-2">
+          </div>
+          <div class="col-2">
+            <div class="center"><%= data["title"] %></div>
+          </div>
+          <div class="col-2">
+            <div class="center"><%= data["type"] %></div>
+          </div>
+          <div class="col-4">
+            <div class="center"><%= data["address"] %></div>
+          </div>
+          <div class="col-2">
+            <div class="center"><%= data["lob"] %></div>
+          </div>
+
+        <% end %>
+        </div>
+        <br>
+      <% end %>
+
+  </div>
+
+</body>
+</html>

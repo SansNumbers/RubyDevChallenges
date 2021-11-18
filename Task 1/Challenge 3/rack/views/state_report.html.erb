@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Challenge 4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class='row'>
+      <div class="col-sm-4">
+         <div class='logo'>
+           <div class="title">LOGO</div>
+         </div>
+      </div>
+      
+      <div class="col-sm-8">
+          <h1>State Report</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-2 hr-block"><h2><%= @result[0]["state"] %></h2></div>
+      <div class="col-10 hr-block"></div>
+
+      <%@result.each do |office| %>
+
+        <div class="col-2">
+        </div>
+        <div class="col-2">
+          <div class="center"><%= office["title"] %></div>
+        </div>
+        <div class="col-2">
+          <div class="center"><%= office["type"] %></div>
+        </div>
+        <div class="col-4">
+          <div class="center"><%= office["address"] %></div>
+        </div>
+        <div class="col-2">
+          <div class="center"><%= office["lob"] %></div>
+        </div>
+
+        <%end%>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
