@@ -13,6 +13,12 @@ class App
     index(request)
   end
 
+  private
+
+  def parse(path)
+    CSV.parse(File.read(path), headers: true)
+  end
+
   def index(request)
     if request.post?
 
@@ -102,6 +108,6 @@ class App
 
     end
 
-    render 'views/ch3.html.erb'
+    render 'views/upload_csv.html.erb'
   end
 end

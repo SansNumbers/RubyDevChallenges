@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Challenge 5</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class='row'>
+      <div class="col-sm-4">
+        <div class='logo'>
+          <div class="title">LOGO</div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <h1>Fixture Type Count Report</h1>
+      </div>
+    </div>
+
+    <% @office.each_with_index do |(key, value), index| %>
+      <div class='row'>
+        <div class="col-4 hr-block">
+          <h2><%= key %></h2>
+        </div>
+
+        <div class="col-7 hr-block"></div>
+
+        <div class="col-1 hr-block">
+          <h3>Total Count: <%= @total_count[index][0]["count"] %></h3>
+        </div>
+
+        <div class="w-100 d-none d-md-block"></div>
+
+        <% value.each do |key, val| %>
+          <div class="col-2">
+          </div>
+          <div class="col-2">
+            <div class="center"><%= key["title"]%></div>
+          </div>
+          <div class="col-1">
+            <div class="center"><%= key["type"]%></div>
+          </div>
+          <div class="col-4">
+            <div class="center"><%= key["address"]%></div>
+          </div>
+          <div class="col-2">
+            <div class="center"><%= key["lob"]%></div>
+          </div>
+          <div class="col-1">
+            <div class="center"><%= val %></div>
+          </div>
+        <% end %>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</body>
+</html>
