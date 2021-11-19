@@ -29,6 +29,6 @@ class States
                     ))
     end
 
-    render 'views/states.html.erb'
+    render 'views/states_report.html.erb'
   end
 end

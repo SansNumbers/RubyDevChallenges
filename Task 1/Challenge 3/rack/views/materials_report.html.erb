@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Challenge 6</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"> </script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class='row'>
+      <div class="col-sm-4">
+          <div class='logo'>
+            <div class="title">LOGO</div>
+          </div>
+      </div>
+      <div class="col-sm-8">
+        <h1>Marketing Material Cost Report</h1>
+      </div>
+    </div>
+
+    <br>
+
+    <% @hash.each_with_index do |(key, value), index| %>
+      <div class='row'>
+        <div class="col-4 hr-block">
+          <h2><%= key %></h2>
+        </div>
+        <div class="col-5 hr-block"></div>
+
+        <div class="col-3 hr-block">
+          <h3>Total cost : <%= @cost[index] %></h3>
+        </div>
+
+        <div class="w-100 d-none d-md-block"></div>
+
+        <% value.each do |data| %>
+          <div class="col-3">
+          </div>
+
+          <div class="col-6">
+            <div class="center"><%= data[0] %></div>
+          </div>
+          <div class="col-3">
+            <div class="center"><%= data[1]%></div>
+          </div>
+
+        <% end %>
+
+      </div>
+
+      <br>
+      <br>
+
+      <canvas id="<%= key %>" width="400" height="250"></canvas>
+
+      <script>
+        new Chart(document.getElementById("<%= key %>"), {
+            type: 'pie',
+            data: {
+              labels: <%= @labels[key]%>,
+              datasets: [
+                {
+                  label: "Materials",
+                  backgroundColor: ["#FFCD56", "#FF6384","#36A2EB"],
+                  data: <%= @data[key]%>
+                }
+              ]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'Marketing Material Costs By Type'
+              }
+            }
+        });
+      </script>
+
+      <br>
+
+    <% end %>
+
+  </div>
+
+</body>
+</html>

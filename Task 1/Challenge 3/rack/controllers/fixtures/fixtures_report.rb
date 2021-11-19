@@ -42,8 +42,8 @@ class Fixtures
       end
     end
 
-    render 'views/fixtures.html.erb'
-    rescue IndexError
-        [200, { 'Content-Type' => 'text/html' }, ["<h1>ERROR: Invalid parameters.</h1>"]]
+    render 'views/fixtures_report.html.erb'
+  rescue IndexError
+    [200, { 'Content-Type' => 'text/html' }, ["<h1>ERROR: Invalid parameters.</h1>"]]
   end
 end

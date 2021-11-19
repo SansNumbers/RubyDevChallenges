@@ -1,6 +1,7 @@
 require './controllers/app'
 require './controllers/states/state_report'
 require './controllers/states/states_report'
+require './controllers/materials/materials_report'
 require './controllers/fixtures/fixture_report'
 require './controllers/fixtures/fixtures_report'
 
@@ -19,6 +20,7 @@ app = Rack::Router.new do
   get '/reports/offices/fixture_types' => Fixtures.new
   get '/reports/offices/fixture_types/' => Fixtures.new
   get '/reports/offices/:id/fixture_types' => FixtureId.new
+  get '/reports/materials' => Materials.new
 end
 
 run app

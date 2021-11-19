@@ -17,8 +17,6 @@ class FixtureId
     @hash = {}
     @office_name = CONN.exec("SELECT name FROM offices WHERE id = #{env['rack.route_params'][:id]}")[0]
 
-    puts @office_name
-
     @hash[@office_name["name"]] = CONN.exec(
       "SELECT fixtures.type
         FROM ((( offices
