@@ -5,6 +5,9 @@ require './controllers/materials/materials_report'
 require './controllers/fixtures/fixture_report'
 require './controllers/fixtures/fixtures_report'
 
+require './controllers/installations/installation_report'
+require './controllers/installations/installations_report'
+
 require 'rack/router'
 
 use Rack::Static,
@@ -21,6 +24,9 @@ app = Rack::Router.new do
   get '/reports/offices/fixture_types/' => Fixtures.new
   get '/reports/offices/:id/fixture_types' => FixtureId.new
   get '/reports/materials' => Materials.new
+  get '/reports/offices/installation' => Installations.new
+  post '/reports/offices/installation' => Installations.new
+  get '/reports/offices/:id/installation' => InstallationId.new
 end
 
 run app

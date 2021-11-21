@@ -1,8 +1,12 @@
+* {
+  margin-left: 20px;
+}
+
 h1 {
   color: black;
   display: flex;
   flex-direction: row;
-  margin: 50px auto;
+  margin-left: 5px;
 }
 
 .logo {
@@ -27,4 +31,8 @@ h1 {
 
 .hr-block {
   border-bottom: 1px solid black;
+}
+
+.name {
+  margin-left: 5px;
 }

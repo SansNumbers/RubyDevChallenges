@@ -19,7 +19,7 @@
           </div>
       </div>
       <div class="col-sm-8">
-        <h1>Marketing Material Cost Report</h1>
+        <h1 class="top-name center-block text-center">Marketing Material Cost Report</h1>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
         <div class="col-5 hr-block"></div>
 
         <div class="col-3 hr-block">
-          <h3>Total cost : <%= @cost[index] %></h3>
+          <h3 class="top-name center-block text-center">Total cost : <%= @cost[index] %></h3>
         </div>
 
         <div class="w-100 d-none d-md-block"></div>
@@ -56,11 +56,11 @@
       <br>
       <br>
 
-      <canvas id="<%= key %>" width="400" height="250"></canvas>
+      <canvas id="<%= key %>" width="50" height="25"></canvas>
 
       <script>
         new Chart(document.getElementById("<%= key %>"), {
-            type: 'pie',
+            type: 'doughnut',
             data: {
               labels: <%= @labels[key]%>,
               datasets: [
@@ -74,7 +74,8 @@
             options: {
               title: {
                 display: true,
-                text: 'Marketing Material Costs By Type'
+                text: 'Marketing Material Costs By Type',
+                fontSize: 40
               }
             }
         });

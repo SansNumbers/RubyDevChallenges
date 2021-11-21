@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Challenge 7</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class='row'>
+      <div class="col-sm-4">
+          <div class='logo'>
+            <div class="title">LOGO</div>
+          </div>
+      </div>
+      <div class="col-sm-8">
+          <h2 class="top-name center-block text-center"><%= @office["name"].upcase %></h2>
+          <h5 class="top-name center-block text-center"><%= " #{@office["state"]},  #{@office["address"]}, #{@office["phone"]}, #{@office["type"]}"%></h5>
+          <h5 class="top-name center-block text-center">Total Area: <%= @sum[0]["area"] %></h5>
+          <h5 class="top-name center-block text-center">Total Max People Count: <%= @sum[0]["people"] %></h5>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <h1 class="top-name center-block text-center">Installation Instructions</h1>
+
+    <div class="row">
+      <% @response.each do |key, value| %>
+
+          <div class="col">
+            <h3><%= key %></h3>
+          </div>
+
+          <div class="w-100 d-none d-md-block"></div>
+
+          <% value.each do |k, v| %>
+              <div class="col-1">
+              </div>
+              <div class="col-11">
+                <h3><%= k %></h3>
+              </div>
+
+              <div class="w-100 d-none d-md-block"></div>
+
+              <% v.each do |data| %>
+                  <div class="col-1">
+                  </div>
+                  <div class="col-3">
+                    <div class="center"><%= data["marketing_material_name"] %></div>
+                  </div>
+                  <div class="col-3">
+                    <div class="center"><%= data["marketing_material_type"] %></div>
+                  </div>
+                  <div class="col-3">
+                    <div class="center"><%= data["fixture_name"]%></div>
+                  </div>
+                  <div class="col-2">
+                    <div class="center"><%= data["fixture_type"]%></div>
+                  </div>
+
+              <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</body>
+
+</html>

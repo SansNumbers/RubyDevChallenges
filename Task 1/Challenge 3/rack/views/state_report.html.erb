@@ -18,13 +18,16 @@
       </div>
       
       <div class="col-sm-8">
-          <h1>State Report</h1>
+          <h1 class="top-name center-block text-center">State Report</h1>
       </div>
     </div>
 
     <div class="row">
       
-      <div class="col-2 hr-block"><h2><%= @result[0]["state"] %></h2></div>
+      <div class="col-2 hr-block">
+        <h2 class="top-name center-block text-center"><%= @result[0]["state"] %></h2>
+      </div>
+      
       <div class="col-10 hr-block"></div>
 
       <%@result.each do |office| %>

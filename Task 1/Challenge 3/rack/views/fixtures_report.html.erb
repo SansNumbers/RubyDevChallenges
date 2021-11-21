@@ -24,14 +24,14 @@
 
     <% @office.each_with_index do |(key, value), index| %>
       <div class='row'>
-        <div class="col-4 hr-block">
+        <div class="col-4 hr-block center-block text-center">
           <h2><%= key %></h2>
         </div>
 
         <div class="col-7 hr-block"></div>
 
         <div class="col-1 hr-block">
-          <h3>Total Count: <%= @total_count[index][0]["count"] %></h3>
+          <h3 class="top-name center-block text-center">Total: <%= @total_count[index][0]["count"] %></h3>
         </div>
 
         <div class="w-100 d-none d-md-block"></div>
