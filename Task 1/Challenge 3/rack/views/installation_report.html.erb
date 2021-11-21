@@ -29,7 +29,7 @@
     <br>
     <br>
 
-    <h1 class="top-name center-block text-center">Installation Instructions</h1>
+    <h1>Installation Instructions</h1>
 
     <div class="row">
       <% @response.each do |key, value| %>
@@ -50,20 +50,21 @@
               <div class="w-100 d-none d-md-block"></div>
 
               <% v.each do |data| %>
-                  <div class="col-1">
-                  </div>
-                  <div class="col-3">
-                    <div class="center"><%= data["marketing_material_name"] %></div>
-                  </div>
-                  <div class="col-3">
-                    <div class="center"><%= data["marketing_material_type"] %></div>
-                  </div>
-                  <div class="col-3">
-                    <div class="center"><%= data["fixture_name"]%></div>
-                  </div>
-                  <div class="col-2">
-                    <div class="center"><%= data["fixture_type"]%></div>
-                  </div>
+              
+                <div class="col-1">
+                </div>
+                <div class="col-3">
+                  <div class="center"><%= data["marketing_material_name"] %></div>
+                </div>
+                <div class="col-3">
+                  <div class="center"><%= data["marketing_material_type"] %></div>
+                </div>
+                <div class="col-3">
+                  <div class="center"><%= data["fixture_name"]%></div>
+                </div>
+                <div class="col-2">
+                  <div class="center"><%= data["fixture_type"]%></div>
+                </div>
 
               <% end %>
           <% end %>

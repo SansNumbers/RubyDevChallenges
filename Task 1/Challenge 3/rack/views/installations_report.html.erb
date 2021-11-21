@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Root Page for Installations</title>
+    <title>Challenge 7</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
   </head>
@@ -21,7 +21,7 @@
 
           </div>
       </div>
-      <h1>Root Page for Installations</h1>
+      <h1>Installations: </h1>
       <div class="list-group">
         <% @offices.each do |office| %>
           <a class="list-group-item list-group-item-action" href="http://127.0.0.1:9292/reports/offices/<%= office["id"] %>/installation"><%= office["name"] %></a>
