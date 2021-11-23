@@ -5,9 +5,9 @@ require 'erb'
 require './controllers/render'
 require './controllers/pg_connect'
 
-class App
+class Parse
   include Render
-
+    
   def call(env)
     request = Rack::Request.new(env)
     index(request)
@@ -18,6 +18,18 @@ class App
   def parse(path)
     CSV.parse(File.read(path), headers: true)
   end
+
+end
+
+class CSVUploadHandler 
+  include Render
+
+  def call(env)
+    request = Rack::Request.new(env)
+    index(request)
+  end
+
+  private
 
   def index(request)
     if request.post?
