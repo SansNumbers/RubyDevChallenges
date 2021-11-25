@@ -1,14 +1,12 @@
-require 'pg'
-require 'erb'
-require './controllers/render'
-require './controllers/pg_connect'
+require './controllers/services/render'
+require './controllers/services/call'
+require './controllers/services/pg_connect'
 
-class Installations
+class Installations < Call
   include Render
 
   def call(env)
-    request = Rack::Request.new(env)
-    index(request, env)
+    super
   end
 
   private
