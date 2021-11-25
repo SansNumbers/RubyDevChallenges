@@ -3,7 +3,7 @@ require 'pg'
 conn = PG.connect(:dbname => 'bank_processes', :password => 'usertest', :port => 5432)
 
 conn.exec(
-    'CREATE TABLE IF NOT EXISTS "offices" (
+  'CREATE TABLE IF NOT EXISTS "offices" (
         id SERIAL PRIMARY KEY,
         name VARCHAR NOT NULL,
         address VARCHAR NOT NULL,
@@ -16,8 +16,8 @@ conn.exec(
     );'
 )
 
-conn.exec (
-    'CREATE TABLE IF NOT EXISTS "zones" (
+conn.exec(
+  'CREATE TABLE IF NOT EXISTS "zones" (
         id SERIAL PRIMARY KEY,
         type VARCHAR NOT NULL,
         office_id INT NOT NULL,
@@ -27,7 +27,7 @@ conn.exec (
 )
 
 conn.exec(
-    'CREATE TABLE IF NOT EXISTS "rooms" (
+  'CREATE TABLE IF NOT EXISTS "rooms" (
         id SERIAL PRIMARY KEY,
         name VARCHAR NOT NULL,
         max_people INT NOT NULL,
@@ -39,7 +39,7 @@ conn.exec(
 )
 
 conn.exec(
-    'CREATE TABLE IF NOT EXISTS "fixtures" (
+  'CREATE TABLE IF NOT EXISTS "fixtures" (
         id SERIAL PRIMARY KEY,
         name VARCHAR NOT NULL,
         type VARCHAR NOT NULL,
@@ -49,7 +49,7 @@ conn.exec(
 )
 
 conn.exec(
-    'CREATE TABLE IF NOT EXISTS "materials" (
+  'CREATE TABLE IF NOT EXISTS "materials" (
         id SERIAL PRIMARY KEY,
         name VARCHAR NOT NULL,
         type VARCHAR NOT NULL,
