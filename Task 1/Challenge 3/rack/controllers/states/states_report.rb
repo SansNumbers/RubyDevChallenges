@@ -1,10 +1,8 @@
-require './controllers/services/render'
-require './controllers/services/call'
+require './controllers/services/base_controller'
 require './controllers/services/pg_connect'
+require './reports/states'
 
-class States < Call
-  include Render
-
+class States < BaseController
   def call(env)
     super
   end
@@ -12,20 +10,8 @@ class States < Call
   private
 
   def index(_request, _env)
-    offices = CONN.exec(
-      'SELECT * FROM offices ORDER BY state'
-    )
-
-    array = []
-    offices.each { |data| array.push(data['state']) }
-    array.uniq!
-
-    @offices = []
-    array.each do |data|
-      @offices.push(CONN.exec(
-                      "SELECT * FROM offices WHERE state = '#{data}'"
-                    ))
-    end
+    @states = StatesReport.new.wake
+    puts @states
 
     render 'views/states_report.html.erb'
   end

@@ -1,10 +1,7 @@
-require './controllers/services/render'
-require './controllers/services/call'
+require './controllers/services/base_controller'
 require './controllers/services/pg_connect'
 
-class Installations < Call
-  include Render
-
+class Installations < BaseController
   def call(env)
     super
   end

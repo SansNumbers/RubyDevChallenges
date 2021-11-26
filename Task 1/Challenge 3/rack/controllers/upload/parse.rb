@@ -2,16 +2,13 @@ require 'csv'
 require 'pg'
 require 'erb'
 
-require './controllers/services/render'
 require './controllers/services/pg_connect'
-require './controllers/services/call'
+require './controllers/services/base_controller'
 
-class Parse
-  include Render
+class Parse < BaseController
 
   def call(env)
-    request = Rack::Request.new(env)
-    index(request)
+    super
   end
 
   private
