@@ -9,8 +9,8 @@ class StateId < BaseController
 
   private
 
-  def index(_request, _env)
-    @result = StateReport.new.stateWake(_env)
+  def index(_request, env)
+    @result = StateReport.new.stateGen(env)
 
     render 'views/state_report.html.erb'
   end

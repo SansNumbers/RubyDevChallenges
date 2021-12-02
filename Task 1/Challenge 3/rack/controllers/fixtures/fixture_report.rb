@@ -2,7 +2,6 @@ require './controllers/services/base_controller'
 require './controllers/services/pg_connect'
 
 class FixtureId < BaseController
-
   def call(env)
     super
   end
